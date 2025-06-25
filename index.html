@@ -5,8 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .player-info { margin-top: 20px; border: 1px solid #ddd; padding: 10px; }
+    </style>
 </head>
 <body>
+    <script src="script.js"></script>
     <div class="header">
         <h1>TimTheTravelMan</h1>
         <p>A website created by me.</p>
@@ -19,7 +24,13 @@
     </div>
     <div class="row">
         <div class="side">Side Section</div>
-        <div class="main">Main Section</div>
+        <div class="main">
+            <h1>Player Information</h1>
+            <button id="download-csv">Download CSV</button>
+            <div id="player-data" class="player-info">
+                Loading player data...
+            </div>
+        </div>
     </div>
     <div class="footer">
         <h2>Footer</h2>
