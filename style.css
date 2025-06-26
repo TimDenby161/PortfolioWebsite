@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+body{
+    font-family: Arial, sans-serif 
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -8,15 +11,27 @@
 .side {
     flex: 30%;
     background-color: #f1f1f1;
-    padding: 20px;
+    padding: 5%;
+}
+.dark-mode .side {
+    flex: 30%;
+    background-color: #333; 
+    padding: 5%;
+    color: white;
 }
 .main {
     flex: 70%;
     background-color: white;
-    padding: 20px;
+    padding: 5%;
+}
+.dark-mode  .main {
+    flex: 70%;
+    background-color: black !important;
+    padding: 5%;
+    color: white;
 }
 .header {
-    padding: 80px;
+    padding: 5%;
     text-align: center;
     background: #1abc9c;
     color: white;
@@ -28,12 +43,25 @@
     overflow: hidden;
     background-color: #333; 
 }
+.dark-mode .navbar {
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
 .navbar a {
     float: left;
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 20px;
+    padding: 1% 4%;
+    text-decoration: none;
+}
+.dark-mode .navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 1% 4%;
     text-decoration: none;
 }
 .navbar a.right {
@@ -43,11 +71,39 @@
     background-color: #ddd;
     color: black;
 }
+.dark-mode .navbar a:hover {
+    background-color: black;
+    color: white;
+}
 .footer {
-    padding: 20px;
+    display: flex;
+    flex-direction: column; /* stack thumbnails and button vertically */
+    align-items: center; /* vertically centers if needed */
+    justify-content: center; /* center if you want vertical centering in a page-height container */
+    gap: 5%; /* space between items */
+    padding: 3%;
     text-align: center;
     background: #ddd;
 }
+.thumbnails {
+    display: flex;
+    gap: 5%; /* spacing between thumbnail items */
+}
+
+.project-thumbnail {
+    display: inline-block;
+}
+
+.project-thumbnail img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1);
+    box-shadow: none;
+}
+.project-thumbnail.active img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
 @media screen and (max-width: 700px) {
     .row {
         flex-direction: column;
