@@ -1,8 +1,14 @@
 * {
     box-sizing: border-box;
 }
+/*
+h1,h2,h3,h4,h5,h6 {
+    color:  rgb(162,230,280)
+}
+*/
 body{
-    font-family: Arial, sans-serif 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
 }
 .row {
     display: flex;
@@ -15,7 +21,7 @@ body{
 }
 .dark-mode .side {
     flex: 30%;
-    background-color: #333; 
+    background-color: black !important;
     padding: 5%;
     color: white;
 }
@@ -26,22 +32,32 @@ body{
 }
 .dark-mode  .main {
     flex: 70%;
-    background-color: black !important;
+    background-color: #333; 
     padding: 5%;
     color: white;
 }
 .header {
-    padding: 5%;
+    padding: 1%;
     text-align: center;
     background: #1abc9c;
     color: white;
+    background-image: url(./images/Tech.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 .header h1 {
     font-size: 40px;
+    margin: 1%;
+    color:  rgb(162,230,280)
+}
+.header p {
+    margin: 1%;
+    color:  rgb(162,230,280);
+    font-size: 25px;
 }
 .navbar {
     overflow: hidden;
-    background-color: #333; 
+    background-color: rgb(162,230,250)
 }
 .dark-mode .navbar {
     overflow: hidden;
@@ -51,7 +67,7 @@ body{
 .navbar a {
     float: left;
     display: block;
-    color: white;
+    color: rgb(0,0,132);
     text-align: center;
     padding: 1% 4%;
     text-decoration: none;
@@ -81,9 +97,9 @@ body{
     align-items: center; /* vertically centers if needed */
     justify-content: center; /* center if you want vertical centering in a page-height container */
     gap: 5%; /* space between items */
-    padding: 3%;
+    padding: 1%;
     text-align: center;
-    background: #ddd;
+    background: rgb(162,230,250);
 }
 .thumbnails {
     display: flex;
@@ -126,7 +142,7 @@ body{
 .progress-bar {
     height: 100%;
     width: 0;
-    background: #4caf50;
+    background: rgb(162,230,250);
     transition: width 0.3s ease;
 }
 
