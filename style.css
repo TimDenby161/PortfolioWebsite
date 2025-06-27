@@ -30,6 +30,7 @@ body{
     background-color: white;
     padding: 5%;
 }
+
 .dark-mode  .main {
     flex: 70%;
     background-color: #333; 
