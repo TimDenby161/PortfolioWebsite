@@ -50,3 +50,20 @@ document.querySelectorAll('.project-thumbnail').forEach(item => {
         item.classList.remove('active');
     });
 });
+
+//dynamic font size change
+const slider = document.getElementById('fontSizeSlider');
+
+// Check localStorage on load
+const savedScale = localStorage.getItem('fontScale');
+if (savedScale) {
+  document.documentElement.style.setProperty('--font-scale', savedScale);
+  slider.value = savedScale * 100; // convert back to slider % value
+}
+
+// Listen for slider changes
+slider.addEventListener('input', function(e) {
+  const scale = e.target.value / 100;
+  document.documentElement.style.setProperty('--font-scale', scale);
+  localStorage.setItem('fontScale', scale);
+});

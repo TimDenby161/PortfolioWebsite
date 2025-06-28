@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+html {
+    --font-scale: 1;
+  }
 /*
 h1,h2,h3,h4,h5,h6 {
     color:  rgb(162,230,280)
@@ -8,7 +11,7 @@ h1,h2,h3,h4,h5,h6 {
 */
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: calc(var(--font-scale) * 1rem);
     overflow-y: scroll;
 }
 .row {
@@ -17,8 +20,16 @@ body{
 }
 .side {
     flex: 30%;
+    flex-direction: column;
     background-color: #f1f1f1;
     padding: 5%;
+    display: flex;
+}
+.side p {
+    margin: 1%;
+}
+.side img {
+    width: 30%;
 }
 .dark-mode .side {
     flex: 30%;
@@ -46,17 +57,20 @@ body{
     background-image: url(./images/Tech.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    min-height: 310px;
+    min-height: 280px;
 }
 .header h1 {
-    font-size: 40px;
+    font-size: calc(var(--font-scale) * 2rem);
     margin: 1%;
     color:  rgb(162,230,280)
+}
+.header img{
+    width: 15%;
 }
 .header p {
     margin: 1%;
     color:  rgb(162,230,280);
-    font-size: 25px;
+    font-size: calc(var(--font-scale) * 1.25rem);
 }
 .navbar {
     overflow: hidden;
@@ -64,7 +78,7 @@ body{
 }
 .dark-mode .navbar {
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #bebcbc;
 }
 
 .navbar a {
@@ -104,6 +118,9 @@ body{
     text-align: center;
     background: rgb(162,230,250);
 }
+.dark-mode .footer {
+    background-color: #bebcbc;
+}
 .thumbnails {
     display: flex;
     gap: 5%; /* spacing between thumbnail items */
@@ -133,7 +150,7 @@ body{
     gap: 8px;
 }
 .progress-item label {
-    min-width: 250px;
+    min-width: 150px;
 }
 .progress-wrap {
     flex: 1;
@@ -148,7 +165,76 @@ body{
     background: rgb(162,230,250);
     transition: width 0.3s ease;
 }
-
+input[type="range"] {
+     width: 50%;
+    height: 6px;
+    background: linear-gradient(to right, rgb(0,0,132), #3b82f6); /* nice gradient */
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* Webkit thumb (Chrome, Safari, Edge) */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #4f46e5;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background: #4f46e5;
+    transform: scale(1.2);
+  }
+  
+  /* Firefox thumb */
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #4f46e5;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  input[type="range"]::-moz-range-thumb:hover {
+    background: #4f46e5;
+    transform: scale(1.2);
+  }
+  button {
+    background: linear-gradient(135deg, rgb(0,0,132), #3b82f6);
+    color: white;
+    padding: 0.75em 1.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+  
+  button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+  
+  button:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
 
 @media screen and (max-width: 700px) {
     .row {
@@ -159,5 +245,21 @@ body{
     .navbar a {
         float: none;
         width: 100%;
+    }
+    .header {
+        min-height: 0px;
+    }
+    .header img{
+        width: 40%;
+    }
+    .side {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .main {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 }
